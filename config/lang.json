@@ -1,0 +1,26 @@
+{
+    "de": {
+        "name": "Name",
+        "phone": "Telefon", 
+        "email": "E-Mail",
+        "company": "Firma",
+        "website": "Website",
+        "thankyou": "Ihre Nachricht wurde versendet"
+    },
+    "fr": {
+        "name": "Nom",
+        "phone": "Téléphone",
+        "email": "Mail",
+        "company": "Entreprise",
+        "website": "Site Internet",
+        "thankyou": "Votre message a bien été envoyé"
+    },
+    "en": {
+        "name": "Name",
+        "phone": "Phone",
+        "email": "Email",
+        "company": "Company",
+        "website": "Website",
+        "thankyou": "Your message has been sent"
+    }
+}
