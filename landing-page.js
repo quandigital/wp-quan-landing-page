@@ -19,7 +19,9 @@ jQuery(document).ready(function($) {
        $.post(ajaxurl, data, function(response) {
             console.log(response);
             if (response && response > 0) {
-                // _gaq.push(['_trackEvent', 'lp-form-success', 'submit-contact', data.url]);
+                if (typeof(_gaq) !== 'undefined') {
+                    _gaq.push(['_trackEvent', 'lp-form-success', 'submit-contact', data.url]);
+                };
                 $('.spinner').remove();
                 $('#send').text(thankYou).addClass('sent');
             }
