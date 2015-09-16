@@ -1,0 +1,42 @@
+{
+    "key": "group_55f92ba653c96",
+    "title": "Form Email Address",
+    "fields": [
+        {
+            "key": "field_55f92bad80315",
+            "label": "Email",
+            "name": "quan_lp_form_email",
+            "type": "email",
+            "instructions": "Enter the email address the landing page form should be submitted to.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "landing-page"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "side",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1442393057
+}

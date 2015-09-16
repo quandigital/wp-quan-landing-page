@@ -1,0 +1,112 @@
+{
+    "key": "group_55bb6b803a567",
+    "title": "Meta",
+    "fields": [
+        {
+            "key": "field_558414bbc6e12",
+            "label": "Titel",
+            "name": "quan_meta_title",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "formatting": "html",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_558414d0c6e13",
+            "label": "Beschreibung",
+            "name": "quan_meta_description",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_55ed79a87cd6b",
+            "label": "Meta Robots",
+            "name": "quan_meta_robots",
+            "type": "checkbox",
+            "instructions": "Check the appropriate boxes if you want these on your resulting document.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "noindex": "noindex",
+                "nofollow": "nofollow",
+                "noarchive": "noarchive"
+            },
+            "default_value": [
+
+            ],
+            "layout": "vertical",
+            "toggle": 1
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "page"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "quan_jobs"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "landing-page"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1442333074
+}
