@@ -12,7 +12,6 @@ class LandingPage
     public function __construct($postId)
     {
         $this->postId = $postId;
-        \add_action('wp_ajax_submitLp', [$this, 'submitForm']);
     }
 
     function cleanTrackingScript()
