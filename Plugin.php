@@ -21,8 +21,7 @@ class Plugin extends Boilerplate
         \add_filter('single_template', [$this, 'registerTemplate']);
 
         \add_action('wp_enqueue_scripts', [$this, 'registerSubmitScript']);
-        \add_action('wp_ajax_submitLp', [$this, 'registerAjax']);
-        // \add_action('wp_ajax_submitLp', [new LandingPage(\get_the_id()), 'submitForm']);
+        \add_action('wp_ajax_nopriv_submitLp', [$this, 'registerAjax']);
     }
 
     public function createCpt()
