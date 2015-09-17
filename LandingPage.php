@@ -17,8 +17,9 @@ class LandingPage
     function cleanTrackingScript()
     {
         add_filter('acf/format_value/name=quan_lp_custom_tracking_code', function($value) {
-            $value = preg_replace('%</?(p|br)\s?/?>%', '', $value);
-            $value = preg_replace('%<script>(.+?)</script>%', '$1', $value);
+            if (!is_admin()) {
+                $value = preg_replace('%</?(p|br)\s?/?>%', '', $value);
+            }
             return $value;
         });
     }
@@ -27,8 +28,8 @@ class LandingPage
     {
         $this->cleanTrackingScript();
         $tracking = get_field('quan_lp_custom_tracking_code');
-        \add_action('wp_head', function() use ($tracking) {
-            echo sprintf('<script>%s</script>', $tracking);
+        \add_action('wp_footer', function() use ($tracking) {
+            echo $tracking;
         });
     }
 
@@ -128,5 +129,8 @@ class LandingPage
     {
         $fields = $this->processFormFields($post);
         return sprintf('<div class="emailbody"><table><tr><td>Name:</td><td>%s</td></tr><tr><td>Email:</td><td>%s</td></tr><tr><td>Phone:</td><td>%s</td></tr><tr><td>Company:</td><td>%s</td></tr><tr><td>Website:</td><td>%s</td></tr><tr><td>Sent from:</td><td>%s</td></tr></table></div>', $fields['name'], $fields['email'], $fields['phone'], $fields['company'], $fields['website'], $fields['url']);
+    }
+}
+['company'], $fields['website'], $fields['url']);
     }
 }
