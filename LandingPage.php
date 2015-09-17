@@ -131,6 +131,3 @@ class LandingPage
         return sprintf('<div class="emailbody"><table><tr><td>Name:</td><td>%s</td></tr><tr><td>Email:</td><td>%s</td></tr><tr><td>Phone:</td><td>%s</td></tr><tr><td>Company:</td><td>%s</td></tr><tr><td>Website:</td><td>%s</td></tr><tr><td>Sent from:</td><td>%s</td></tr></table></div>', $fields['name'], $fields['email'], $fields['phone'], $fields['company'], $fields['website'], $fields['url']);
     }
 }
-['company'], $fields['website'], $fields['url']);
-    }
-}
