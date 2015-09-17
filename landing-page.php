@@ -10,7 +10,7 @@ use QuanDigital\WpLib\Autoload;
  * Author: Quan Digital GmbH
  * Author URI: http://www.quandigital.com/
  * Description: Adds a custom post types for landing pages
- * Version: 1.0.3
+ * Version: 1.0.4
  * License: MIT
  */
 

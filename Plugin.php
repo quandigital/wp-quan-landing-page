@@ -16,7 +16,8 @@ class Plugin extends Boilerplate
 
         $this->createCpt();
         \add_action('init', [$this, 'registerLanguageTaxonomy'], 20);
-        \add_action('init', [$this, 'addRewriteRules']);
+        \add_action('pre_get_posts', [$this, 'parseQueryWithoutSlug']);
+
         \add_filter('post_type_link', [$this, 'filterPostLink'], 10, 2);
         \add_filter('single_template', [$this, 'registerTemplate']);
 
@@ -38,18 +39,19 @@ class Plugin extends Boilerplate
         return $template;
     }
 
-    public function addRewriteRules()
-    {
-        $query = new \WP_Query(['post_type' => $this->postType, 'posts_per_page' => -1]);
-
-        if ($query->have_posts()) {
-            while ($query->have_posts()) {
-                $query->the_post();
-
-                if ($query->post->post_type == $this->postType) {
-                    \add_rewrite_rule('(.*?)$', 'index.php?' . $query->post->post_type . '=$matches[1]', 'top');
-                }
-            }
+    function parseQueryWithoutSlug($query) {
+ 
+        // Only noop the main query
+        if (!$query->is_main_query())
+            return;
+     
+        // Only noop our very specific rewrite rule match
+        if (count($query->query) !== 2 || !isset($query->query['page'])) {
+            return;
+        }
+     
+        if (!empty($query->query['name'])) {
+            $query->set('post_type', array('post', 'landing-page', 'page'));
         }
     }
     
